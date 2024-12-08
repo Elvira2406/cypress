@@ -2,8 +2,8 @@ describe('Покупка аватара', function () {
 
     it('e2e тест на покупку нового аватара для тренера', function () {
          cy.visit('https://pokemonbattle.ru/');
-         cy.get(':nth-child(1) > .auth__input').type('nurgalieva.24@yandex.ru');
-         cy.get('#password').type('ZLQ-i5G-R9T-G76');
+         cy.get(':nth-child(1) > .auth__input').type('USER_LOGIN');
+         cy.get('#password').type('USER_PASSWORD');
          cy.get('.auth__button').click();
          cy.wait(500);
          cy.get('.header__container > .header__id').click();
@@ -21,10 +21,6 @@ describe('Покупка аватара', function () {
          cy.get('.payment__font-for-success').should('be.visible');
          cy.get('.payment__adv').should('be.visible');
          cy.get('.payment__adv').should('have.css', 'color', 'rgb(85, 137, 241)');
-
-
-
-
      })
 
 
